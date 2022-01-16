@@ -7,4 +7,6 @@ public interface BasicService {
 	String test(int flag);
 
 	TestMessage jsonTest();
+
+	String test2(int flag);
 }

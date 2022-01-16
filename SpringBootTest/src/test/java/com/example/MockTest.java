@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.service.BasicService;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -37,5 +38,21 @@ public class MockTest {
 
         assertThat(service.test(0))
                 .isEqualTo("Spring Boot Service Test");
+    }
+
+    @Test
+    public void test2() {
+        given(service.test2(1))
+                .willReturn("test complete");
+        given(service.test2(0))
+                .willReturn("test incomplete");
+
+        String test_complete = restTemplate.getForObject("/test2?flag=1", String.class);
+        String test_incomplete = restTemplate.getForObject("/test2?flag=0", String.class);
+
+        assertThat(test_complete)
+                .isEqualTo("test complete");
+        assertThat(test_incomplete)
+                .isEqualTo("test incomplete");
     }
 }
