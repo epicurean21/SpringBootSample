@@ -1,5 +1,5 @@
 plugins {
-	id "com.google.protobuf" version "0.8.18"
+	id "com.google.protobuf" version "0.9.1"
 }
 
 group = 'com.example'
@@ -9,12 +9,12 @@ repositories {
 	mavenCentral()
 }
 
-var protobufVersion='3.20.0'
-var grpcVersion='1.45.1'
+var protobufVersion='3.21.8'
+var grpcVersion='1.50.2'
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'io.github.lognet:grpc-spring-boot-starter:4.7.0'
+	implementation 'io.github.lognet:grpc-spring-boot-starter:4.9.0'
 	implementation "com.google.protobuf:protobuf-java-util:${protobufVersion}"
 }
 
