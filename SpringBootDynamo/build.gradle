@@ -6,9 +6,9 @@ repositories {
 }
 
 dependencies {
-    implementation platform('software.amazon.awssdk:bom:2.19.17')
+    implementation platform('software.amazon.awssdk:bom:2.22.9')
     implementation 'software.amazon.awssdk:dynamodb'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
-	testImplementation 'org.testcontainers:junit-jupiter:1.17.6'
+	testImplementation 'org.testcontainers:junit-jupiter:1.19.3'
 }
